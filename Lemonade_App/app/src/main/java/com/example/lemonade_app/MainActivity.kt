@@ -170,6 +170,30 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
                         }
                 )
             }
+
+            //Paso 4: Beber la limonada y valorarla con estrellas
+            3 -> {
+                Text(
+                    text = "Beu-te-la $nomUsuari",
+                    fontSize = 20.sp,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.padding(bottom = 32.dp)
+                )
+
+                Image(
+                    painter = painterResource(id = R.drawable.lemon_drink), // Necessites aquesta imatge
+                    contentDescription = "Llimonada",
+                    modifier = Modifier
+                        .size(300.dp)
+                        .padding(bottom = 32.dp)
+                )
+
+                Text(
+                    text = "Valora la llimonada (1-5 estrelles):",
+                    fontSize = 18.sp,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                )
+            }
         }
     }
 }
