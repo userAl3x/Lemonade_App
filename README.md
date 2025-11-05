@@ -61,4 +61,3 @@ Aplicación interactiva de Android desarrollada en Kotlin con Jetpack Compose qu
   - `java/com/example/lemonade_app/MainActivity.kt` - Actividad principal
   - `res/drawable/` - Recursos de imágenes (lemon_tree, lemon_squeeze, lemon_drink, lemon_restart)
   - `AndroidManifest.xml` - Configuración de la app
-  - `README.md` - README del repositorio
