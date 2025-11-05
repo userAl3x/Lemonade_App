@@ -29,3 +29,9 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+@Composable
+//Creamos la funcion LemonadeApp
+fun LemonadeApp() {
+
+}
