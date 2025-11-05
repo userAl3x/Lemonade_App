@@ -83,7 +83,7 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
     )
     {
         when (step) {
-            //Paso 1. Introducir el nombre
+            //Paso 0: Introducir el nombre
             0 -> {
                 Text(
                     text = "Benvingut a l'app de Llimonada!",
@@ -116,7 +116,7 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
                 }
             }
 
-            //Paso 2. Usamos al limonero
+            //Paso 1: Usamos al limonero
             1 -> {
                 Text(
                     text = "Agafa una llimona $nomUsuari",
@@ -144,7 +144,7 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
                 )
             }
 
-            // Paso 3: Exprimir la llimona
+            // Paso 2: Exprimir la llimona
             2 -> {
                 Text(
                     text = "Esprem la llimona $nomUsuari",
@@ -179,7 +179,7 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
                 )
             }
 
-            //Paso 4: Beber la limonada y valorarla con estrellas
+            //Paso 3: Beber la limonada y valorarla con estrellas
             3 -> {
                 Text(
                     text = "Beu-te-la $nomUsuari",
@@ -277,7 +277,7 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
                 }
             }
 
-            // Paso 5: Vaso vació i empezamos de nuevo
+            // Paso 4: Vaso vació i empezamos de nuevo
             4 -> {
                 Text(
                     text = "Comença de nou $nomUsuari",
