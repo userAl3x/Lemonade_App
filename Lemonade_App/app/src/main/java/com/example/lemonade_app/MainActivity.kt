@@ -276,6 +276,29 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
                     Text("Valorar")
                 }
             }
+            // Paso 5: Vaso vació i empezamos de nuevo
+            4 -> {
+                Text(
+                    text = "Comença de nou $nomUsuari",
+                    fontSize = 20.sp,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.padding(bottom = 32.dp)
+                )
+
+                Image(
+                    painter = painterResource(id = R.drawable.lemon_restart), // Necessites aquesta imatge
+                    contentDescription = "Got buit",
+                    modifier = Modifier
+                        .size(300.dp)
+                        .padding(bottom = 32.dp)
+                )
+
+                Text(
+                    text = "La teva valoració:",
+                    fontSize = 18.sp,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                )
+            }
         }
     }
 }
