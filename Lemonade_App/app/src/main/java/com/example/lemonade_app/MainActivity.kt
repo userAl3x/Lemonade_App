@@ -126,7 +126,7 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
                 )
 
                 Image(
-                    painter = painterResource(id = R.drawable.lemon_tree), // Necessites aquesta imatge
+                    painter = painterResource(id = R.drawable.lemon_tree), //Limonero
                     contentDescription = "Llimoner",
                     modifier = Modifier
                         .size(300.dp)
@@ -161,7 +161,7 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
                 )
 
                 Image(
-                    painter = painterResource(id = R.drawable.lemon_squeeze), // Necessites aquesta imatge
+                    painter = painterResource(id = R.drawable.lemon_squeeze), //Limon
                     contentDescription = "Llimona",
                     modifier = Modifier
                         .size(300.dp)
@@ -189,7 +189,7 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
                 )
 
                 Image(
-                    painter = painterResource(id = R.drawable.lemon_drink), // Necessites aquesta imatge
+                    painter = painterResource(id = R.drawable.lemon_drink), //Vaso con limonada
                     contentDescription = "Llimonada",
                     modifier = Modifier
                         .size(300.dp)
@@ -276,7 +276,7 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
                     Text("Valorar")
                 }
             }
-            
+
             // Paso 5: Vaso vació i empezamos de nuevo
             4 -> {
                 Text(
@@ -287,7 +287,7 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
                 )
 
                 Image(
-                    painter = painterResource(id = R.drawable.lemon_restart), // Necessites aquesta imatge
+                    painter = painterResource(id = R.drawable.lemon_restart), //Vaso vacio
                     contentDescription = "Got buit",
                     modifier = Modifier
                         .size(300.dp)
