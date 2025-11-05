@@ -58,29 +58,16 @@ Aplicación interactiva de Android desarrollada en Kotlin con Jetpack Compose qu
 ## 📦 Estructura del proyecto
 Lemonade_App/
 ├── app/
-
 │ ├── src/
-
 │ │ └── main/
-
 │ │ ├── java/com/example/lemonade_app/
-
 │ │ │ └── MainActivity.kt
-
 │ │ ├── res/
-
 │ │ │ └── drawable/
-
 │ │ │ ├── lemon_tree.xml
-
 │ │ │ ├── lemon_squeeze.xml
-
 │ │ │ ├── lemon_drink.xml
-
 │ │ │ └── lemon_restart.xml
-
 │ │ └── AndroidManifest.xml
-
 │ └── build.gradle.kts
-
 └── README.md
