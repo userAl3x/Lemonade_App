@@ -17,7 +17,6 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableIntStateOf
@@ -48,11 +47,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Lemonade_appTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ){
-                    LemonadeApp()
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    LemonadeApp(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
