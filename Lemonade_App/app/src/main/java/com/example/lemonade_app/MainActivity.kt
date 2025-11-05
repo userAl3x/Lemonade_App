@@ -299,6 +299,43 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
                     fontSize = 18.sp,
                     modifier = Modifier.padding(bottom = 16.dp)
                 )
+
+                Row(
+                    horizontalArrangement = Arrangement.Center,
+                    modifier = Modifier.padding(bottom = 32.dp)
+                ) {
+                    repeat(5) { index ->
+                        Icon(
+                            imageVector = Icons.Filled.Star,
+                            contentDescription = "Estrella ${index + 1}",
+                            tint = if (index < valoracio) {
+                                MaterialTheme.colorScheme.primary
+                            } else {
+                                MaterialTheme.colorScheme.outline
+                            },
+                            modifier = Modifier
+                                .size(40.dp)
+                                .padding(4.dp)
+                        )
+                    }
+                }
+
+                Button(
+                    onClick = {
+                        step = 1
+                        clicksActuals = 0
+                        valoracio = 0
+                        valoracioTemp = ""
+                        Toast.makeText(
+                            context,
+                            "Comença de nou $nomUsuari",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    },
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text("Començar de nou")
+                }
             }
         }
     }
