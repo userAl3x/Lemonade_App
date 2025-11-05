@@ -60,8 +60,8 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
     var nomUsuari by remember { mutableStateOf("") }    //variable para el nombre del Usuario
     var nomTemp by remember { mutableStateOf("") }  //variable nomTemporal
     var step by remember { mutableIntStateOf(0) } //variable para los pasos
-    var clicksNecessaris by remember { mutableIntStateOf(0) }
-    var clicksActuals by remember { mutableIntStateOf(0) }
+    var clicksNecessaris by remember { mutableIntStateOf(0) } //variable para los clicks necesarios
+    var clicksActuals by remember { mutableIntStateOf(0) }  //variable para guardar los clics que hace el usuario
 
     val context = LocalContext.current   //variable para poder utilizar el toast
 
