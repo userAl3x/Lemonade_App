@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableIntStateOf
@@ -36,10 +37,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             Lemonade_appTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Limonada",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    LemonadeApp(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -48,7 +46,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 //Creamos la funcion LemonadeApp
-fun LemonadeApp() {
+fun LemonadeApp(modifier: Modifier = Modifier) {
     //Variables que necesitaremos
     var nomUsuari by remember { mutableStateOf("") }    //variable para el nombre del Usuario
     var nomTemp by remember { mutableStateOf("") }  //variable nomTemporal
@@ -58,7 +56,7 @@ fun LemonadeApp() {
 
 
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -98,6 +96,9 @@ fun LemonadeApp() {
                     Text("Començar")
                 }
             }
+
+            //Paso 2. Exprimimos la limonada
+            
         }
     }
 }
