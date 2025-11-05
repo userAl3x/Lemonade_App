@@ -5,11 +5,14 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -27,9 +30,11 @@ import com.example.lemonade_app.ui.theme.Lemonade_appTheme
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlin.random.Random
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,6 +60,8 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
     var nomUsuari by remember { mutableStateOf("") }    //variable para el nombre del Usuario
     var nomTemp by remember { mutableStateOf("") }  //variable nomTemporal
     var step by remember { mutableIntStateOf(0) } //variable para los pasos
+    var clicksNecessaris by remember { mutableIntStateOf(0) }
+    var clicksActuals by remember { mutableIntStateOf(0) }
 
     val context = LocalContext.current   //variable para poder utilizar el toast
 
@@ -101,8 +108,33 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
                 }
             }
 
-            //Paso 2. Exprimimos la limonada
-            
+            //Paso 2. Usamos al limonero
+            1 -> {
+                Text(
+                    text = "Agafa una llimona $nomUsuari",
+                    fontSize = 20.sp,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.padding(bottom = 32.dp)
+                )
+
+                Image(
+                    painter = painterResource(id = R.drawable.lemon_tree), // Necessites aquesta imatge
+                    contentDescription = "Llimoner",
+                    modifier = Modifier
+                        .size(300.dp)
+                        .clickable {
+                            step = 2
+                            // Random.nextInt(from, until) no inclou el límit superior
+                            clicksNecessaris = Random.nextInt(1, 11) // De 1 a 10
+                            clicksActuals = 0
+                            Toast.makeText(
+                                context,
+                                "Necessites $clicksNecessaris clics!",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                )
+            }
         }
     }
 }
