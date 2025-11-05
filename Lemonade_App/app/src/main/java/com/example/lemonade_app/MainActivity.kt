@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -36,8 +37,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Lemonade_appTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    LemonadeApp(modifier = Modifier.padding(innerPadding))
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ){
+                    LemonadeApp()
                 }
             }
         }
