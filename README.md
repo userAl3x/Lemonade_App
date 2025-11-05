@@ -1,6 +1,6 @@
 # 🍋 Lemonade App
 
-**Desarrollado por:** Alex Jimenez
+**Desarrollado por:** Alex Jimenez Quiñonero
 
 ## 📱 Descripción
 
@@ -56,18 +56,9 @@ Aplicación interactiva de Android desarrollada en Kotlin con Jetpack Compose qu
   - Random number generation para clicks aleatorios
 
 ## 📦 Estructura del proyecto
-Lemonade_App/
-├── app/
-│ ├── src/
-│ │ └── main/
-│ │ ├── java/com/example/lemonade_app/
-│ │ │ └── MainActivity.kt
-│ │ ├── res/
-│ │ │ └── drawable/
-│ │ │ ├── lemon_tree.xml
-│ │ │ ├── lemon_squeeze.xml
-│ │ │ ├── lemon_drink.xml
-│ │ │ └── lemon_restart.xml
-│ │ └── AndroidManifest.xml
-│ └── build.gradle.kts
-└── README.md
+
+- `Lemonade_App/app/src/main/`
+  - `java/com/example/lemonade_app/MainActivity.kt` - Actividad principal
+  - `res/drawable/` - Recursos de imágenes (lemon_tree, lemon_squeeze, lemon_drink, lemon_restart)
+  - `AndroidManifest.xml` - Configuración de la app
+  - `README.md` - README del repositorio
