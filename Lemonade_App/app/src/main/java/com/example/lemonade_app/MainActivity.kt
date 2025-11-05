@@ -35,6 +35,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlin.random.Random
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material3.Icon
+import androidx.compose.ui.text.input.KeyboardType
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,6 +68,8 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
     var step by remember { mutableIntStateOf(0) } //variable para los pasos
     var clicksNecessaris by remember { mutableIntStateOf(0) } //variable para los clicks necesarios
     var clicksActuals by remember { mutableIntStateOf(0) }  //variable para guardar los clics que hace el usuario
+    var valoracio by remember { mutableIntStateOf(0) }
+    var valoracioTemp by remember { mutableStateOf("") }
 
     val context = LocalContext.current   //variable para poder utilizar el toast
 
@@ -193,6 +201,80 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
                     fontSize = 18.sp,
                     modifier = Modifier.padding(bottom = 16.dp)
                 )
+
+                // Mostrar estrelles segons la valoració temporal
+                Row(
+                    horizontalArrangement = Arrangement.Center,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                ) {
+                    var valoracioActual: Int
+                    
+                    if (valoracioTemp.isEmpty()) {
+                        valoracioActual = 0
+                    } else {
+                        valoracioActual = valoracioTemp.toInt()
+                    }
+
+                    repeat(5) { index ->
+                        Icon(
+                            imageVector = Icons.Filled.Star,
+                            contentDescription = "Estrella ${index + 1}",
+                            tint = if (index < valoracioActual) {
+                                MaterialTheme.colorScheme.primary
+                            } else {
+                                MaterialTheme.colorScheme.outline
+                            },
+                            modifier = Modifier
+                                .size(40.dp)
+                                .padding(4.dp)
+                        )
+                    }
+                }
+
+                OutlinedTextField(
+                    value = valoracioTemp,
+                    onValueChange = { valoracioTemp = it },
+                    label = { Text("Valoració (1-5)") },
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 16.dp)
+                )
+
+                Button(
+                    onClick = {
+                        if (valoracioTemp.isEmpty()) {
+                            Toast.makeText(
+                                context,
+                                "Si us plau, introdueix un número entre 1 i 5",
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                        } else {
+                            val valor = valoracioTemp.toInt()
+
+                            if (valor in 1..5) {
+                                valoracio = valor
+                                step = 4
+                                Toast.makeText(
+                                    context,
+                                    "Has valorat amb $valoracio estrelles!",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+
+                            } else {
+                                Toast.makeText(
+                                    context,
+                                    "Si us plau, introdueix un número entre 1 i 5",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                    },
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text("Valorar")
+                }
             }
         }
     }
