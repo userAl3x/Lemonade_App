@@ -276,6 +276,7 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
                     Text("Valorar")
                 }
             }
+            
             // Paso 5: Vaso vació i empezamos de nuevo
             4 -> {
                 Text(
