@@ -135,6 +135,41 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
                         }
                 )
             }
+
+            // Paso 3: Exprimir la llimona
+            2 -> {
+                Text(
+                    text = "Esprem la llimona $nomUsuari",
+                    fontSize = 20.sp,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                )
+
+                Text(
+                    text = "Clics: $clicksActuals / $clicksNecessaris",
+                    fontSize = 16.sp,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                )
+
+                Image(
+                    painter = painterResource(id = R.drawable.lemon_squeeze), // Necessites aquesta imatge
+                    contentDescription = "Llimona",
+                    modifier = Modifier
+                        .size(300.dp)
+                        .clickable {
+                            clicksActuals++
+                            if (clicksActuals >= clicksNecessaris) {
+                                step = 3
+                                Toast.makeText(
+                                    context,
+                                    "Llimona espremuda!",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                )
+            }
         }
     }
 }
